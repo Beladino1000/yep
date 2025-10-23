@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import HtmlFrame
+import os
 
 class Matrizes:
     def __init__(self,colunas,linhas,lei=None):
@@ -12,11 +14,14 @@ class Matrizes:
     def __str__(self):
         return '\n'.join([' '.join([str(elemento) for elemento in linha]) for linha in self.dados])
     
-def App():
-    root = tk.Tk()
-    root.title("Matriz")
-    root.geometry("800x600")
-    root.mainloop()
+root = tk.Tk()
+root.title("Carregando HTML/CSS Local")
+root.geometry("800x600")
 
-if __name__ == "__main__":
-    App()
+browser_frame = HtmlFrame(root, messages_enabled=False) 
+browser_frame.pack(fill="both", expand=True)
+
+html_file_path = os.path.abspath('index.html')
+browser_frame.load_file(f'file://{html_file_path}')
+
+root.mainloop()
