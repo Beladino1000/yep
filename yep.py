@@ -18,18 +18,24 @@ class Matrizes:
         self.dados[i-1][j-1]=valor
 
     def __str__(self):
-        return '\n'.join([' '.join([str(elemento) for elemento in linha]) for linha in self.dados])    
-
+        return '\n'.join([' '.join([str(elemento) for elemento in linha]) for linha in self.dados])
+    
+class Api:
+    def receber(self,texto):
+        print(f'Recebi o texto: {texto}')
+        resultado=texto.upper()
+        return resultado
+    
 if __name__ == '__main__':
-
+    api=Api()
     html_file = os.path.join(os.path.dirname(__file__), 'index.html')
 
     webview.create_window(
         'Calculadora de Matrizes',
-        js_api=Matrizes,
+        js_api=api,
         url=html_file,
-        width=800,
-        height=600
+        width=1080,
+        height=720
     )
 
     webview.start()
