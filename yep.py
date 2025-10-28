@@ -1,6 +1,9 @@
 import webview
-import os
-from flask import Flask, request, 
+from flask import Flask, request, render_template
+import threading
+
+app = Flask(__name__)
+
 class Matrizes:
 
     def __init__(self,colunas,linhas,lei=None):
@@ -20,24 +23,26 @@ class Matrizes:
 
     def __str__(self):
         return '\n'.join([' '.join([str(elemento) for elemento in linha]) for linha in self.dados])
-    
-class Api:
-    def receber(self,texto):
-        print(f'Recebi o texto: {texto}')
-        resultado=texto.upper()
-        return resultado
-    
-if __name__ == '__main__':
-    api=Api()
-    html_file = os.path.join(os.path.dirname(__file__), 'index.html')
 
-    webview.create_window(
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+def start_flask():
+    app.run(host='127.0.0.1', port=5000)
+
+if __name__ == '__main__':
+    
+    t = threading.Thread(target=start_flask)
+    t.daemon = True
+    t.start()
+
+    window=webview.create_window(
         'Calculadora de Matrizes',
-        js_api=api,
-        url=127.0.0.1,
-        port=5000
+        'http://127.0.0.1:5000/',
         width=1080,
-        height=720
-    )
+        height=720,
+        resizable=True
+        )
 
     webview.start()
