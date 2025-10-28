@@ -1,5 +1,6 @@
 import webview
 import os
+from flask import Flask, request, 
 class Matrizes:
 
     def __init__(self,colunas,linhas,lei=None):
@@ -33,7 +34,8 @@ if __name__ == '__main__':
     webview.create_window(
         'Calculadora de Matrizes',
         js_api=api,
-        url=html_file,
+        url=127.0.0.1,
+        port=5000
         width=1080,
         height=720
     )
