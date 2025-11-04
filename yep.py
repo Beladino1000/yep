@@ -26,7 +26,10 @@ class Matrizes:
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    ordem=2
+    matriz=Matrizes(ordem,ordem,0)
+    print(matriz)
+    return render_template('index.html',matriz=matriz)
 
 def start_flask():
     app.run(host='127.0.0.1', port=5000)
