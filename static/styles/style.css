@@ -1,4 +1,4 @@
-/* style.css (VERSÃO LIMPA E CORRIGIDA) */
+/* style.css */
 
 * {
     margin: 0;
@@ -19,7 +19,7 @@ body {
 
 .main-header {
     background-color: #0077b6;
-    color: white; /* Corrigido para branco para melhor contraste */
+    color: white;
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -30,9 +30,131 @@ body {
     font-weight: 300;
 }
 
-.main-label {
-    font-size: 1.2em;
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+.system-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.form-group input[type="number"] {
+    padding: 5px 10px;
+    font-size: 1em;
+    width: 80px;
+    text-align: center;
+}
+
+.time-estimate {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.time-estimate h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.estimate-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.estimate-method {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.estimate-method h4 {
+    color: #0077b6;
+    margin-bottom: 10px;
+}
+
+.estimate-method p {
+    margin: 8px 0;
+}
+
+.complexity {
+    font-family: monospace;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.warning {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.estimate-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+.estimate-button:hover {
+    background-color: #218838;
+}
+
+.confirm-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.matrix-input {
+    margin: 20px 0;
+}
+
+.matrix-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.matrix-row input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.matrix-row span {
+    margin: 0 5px;
+}
+
 .main-button {
     background-color: #0077b6;
     color: white;
@@ -44,17 +166,93 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.content {
-    flex: 1; /* Esta é a forma mais limpa de fazer o conteúdo crescer */
+.main-button:hover {
+    background-color: #005a8c;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.method-result {
+    background-color: white;
     padding: 20px;
-    text-align: center;
-    color: #333; /* Cor mais escura para melhor leitura */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.method-result h2 {
+    color: #0077b6;
+    margin-bottom: 15px;
+}
+
+.time {
+    font-family: monospace;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.solution {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 4px;
+}
+
+.solution p {
+    font-family: monospace;
+    margin: 5px 0;
+}
+
+.steps {
+    text-align: left;
+}
+
+.step {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.step h4 {
+    color: #0077b6;
+    margin-bottom: 10px;
+}
+
+.matrix {
+    display: inline-block;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    padding: 5px 15px;
+    margin: 10px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.element {
+    font-family: monospace;
+    min-width: 50px;
+    text-align: right;
+}
+
+.error {
+    color: #d32f2f;
+    font-weight: bold;
 }
 
 .main-footer {
     background-color: #333;
-    color: #ccc; /* Cor mais clara para contraste com o fundo escuro */
+    color: #ccc;
     text-align: center;
     padding: 15px 0;
     font-size: 0.9em;
+    margin-top: 20px;
 }
